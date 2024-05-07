@@ -23,6 +23,7 @@ class TestOrderPage:
         #Проверка перехода на главную страницу
         main_page.assert_to_main_page()
 
+    @allure.title('Проверка перехода на страницу Дзена')
     def test_go_to_dzen(self, driver):
 
         driver = driver
@@ -35,7 +36,7 @@ class TestOrderPage:
         #Переход через по лого Яндекс
         main_page.click_dzen()
         #Проверка перехода на странизу дзена
-        main_page.assert_to_dzen_page()
+        main_page.check_to_dzen_page()
 
 
 

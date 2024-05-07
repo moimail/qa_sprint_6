@@ -26,3 +26,8 @@ class BasePage:
         #Прокручиваем страницу до элемента по локатору
         element = self.driver.find_element(*locator)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    @allure.step('Получить текущую URL')
+    def get_url(self):
+
+        return self.driver.current_url

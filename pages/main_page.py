@@ -31,7 +31,7 @@ class MainPage(BasePage):
     @allure.step('Проверка перехода на главную страницу')
     def assert_to_main_page(self):
 
-        url = self.driver.current_url
+        url = self.get_url()
         assert url == urls.MAIN_PAGE
 
     @allure.step('Принять куки')
@@ -45,7 +45,7 @@ class MainPage(BasePage):
         self.element_is_visible(loc.LOGO_BUTTON).click()
 
     @allure.step('Проверка открытия новой вкладыки с Дзеном')
-    def assert_to_dzen_page(self):
+    def check_to_dzen_page(self):
 
         self.driver.switch_to.window(self.driver.window_handles[1])
 
@@ -57,10 +57,10 @@ class MainPage(BasePage):
     @allure.step('Развернуть вопрос')
     def expand_question(self, data):
 
-        element = self.element_is_visible([By.XPATH, f"//*[@id ='accordion__heading-{data["index"]}']"])
+        element = self.element_is_visible(loc.index_que(data))
         element.click()
 
     @allure.step('Проверка ответа')
     def check_question(self, data):
 
-        self.element_is_visible([By.XPATH, f".//div/p[contains(text(),'{data["answer"]}')]"])
+        self.element_is_visible(loc.check_answer(data))

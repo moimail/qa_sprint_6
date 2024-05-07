@@ -21,7 +21,6 @@ class TesteQuestions:
                                           que.QUESTION_8])
     def test_questions_about_important_things(self, driver, que_data):
 
-        driver = driver
         main_page = MainPage(driver, urls.MAIN_PAGE)
         # Открытие главной страницы
         main_page.open_main_page()

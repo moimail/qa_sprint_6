@@ -44,10 +44,7 @@ class MainPage(BasePage):
 
         self.element_is_visible(loc.LOGO_BUTTON).click()
 
-    @allure.step('Проверка открытия новой вкладыки с Дзеном')
-    def check_to_dzen_page(self):
 
-        self.driver.switch_to.window(self.driver.window_handles[1])
 
     @allure.step('Прокрутка до вопросов')
     def scroll_to_questions(self):
@@ -63,4 +60,7 @@ class MainPage(BasePage):
     @allure.step('Проверка ответа')
     def check_question(self, data):
 
-        self.element_is_visible(loc.check_answer(data))
+        element = self.element_is_visible(loc.check_answer(data))
+        value = element.text
+        assert value == data['answer']
+

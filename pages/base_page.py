@@ -1,6 +1,9 @@
+import time
+
 import allure
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
+import data.urls as urls
 
 
 from conftest import driver
@@ -31,3 +34,13 @@ class BasePage:
     def get_url(self):
 
         return self.driver.current_url
+
+    @allure.step('Проверка открытия новой вкладыки с Дзеном')
+    def check_to_dzen_page(self):
+
+          self.driver.switch_to.window(self.driver.window_handles[1])
+          #Ожидание прогрузки страницы
+          time.sleep(10)
+          #Проерка URL
+          url =self.driver.current_url
+          assert url == urls.DZEN

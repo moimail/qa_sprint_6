@@ -34,7 +34,7 @@ class TestOrderPage:
         #Переход через по лого Яндекс
         main_page.click_dzen()
         #Проверка перехода на странизу дзена
-        main_page.check_to_dzen_page()
+        main_page.check_to_dzen_page(loc.HEADER_DZEN)
 
 
 

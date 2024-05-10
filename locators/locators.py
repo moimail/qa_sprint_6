@@ -6,7 +6,7 @@ LOGO_BUTTON = [By.XPATH, ".//a[@href='//yandex.ru']"]
 HOME_PAGE = [By.XPATH, ".//div[4][@class = 'Home_Header__iJKdX']"]
 
 #Хедер Дзена
-HEADER_DZEN = [By.XPATH, ".//div[3][@class = 'y5Iohvhmb5d2CQby8__yandexSearchContainer-2y']"]  #Закгловок Дзена
+HEADER_DZEN = [By.XPATH, "/html/body/form/input[1]"]  #Закгловок Дзена
 
 #Верхняя кнопка заказа
 

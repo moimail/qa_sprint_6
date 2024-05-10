@@ -76,10 +76,10 @@ class OrderPage(BasePage):
         #Заполняем срок аренды
         element = self.element_is_visible(locators.RENTAL_PERIOD_FIELD)
         element.click()
-        element = self.element_is_visible([By.XPATH, f".//*[text()='{user_data["period"]}']"])
+        element = self.element_is_visible(locators.period(user_data))
         element.click()
         #Выбор цвета
-        element = self.element_is_visible([By.XPATH, f".//*[text()='{user_data["color"]}']"])
+        element = self.element_is_visible(locators.color(user_data))
         element.click()
         #Запонение комментария
         element = self.element_is_visible(locators.COMMENT_FIELD)
@@ -114,7 +114,7 @@ class OrderPage(BasePage):
         element.click()
         element = self.element_is_visible(locators.SEE_STATUS_BUTTON)
         element.click()
-        self.element_is_visible(locators.STATUS_ORDER_PAGE)
+        assert self.element_is_visible(locators.STATUS_ORDER_PAGE)
 
 
 

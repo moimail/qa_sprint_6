@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 # Хедер
-SCOOTER_BUTTON = [By.XPATH, ".//div[1]/a[2][@class='Header_LogoScooter__3lsAR']"]
+SCOOTER_BUTTON = [By.CLASS_NAME, 'Header_LogoScooter__3lsAR']
 LOGO_BUTTON = [By.XPATH, ".//a[@href='//yandex.ru']"]
 HOME_PAGE = [By.XPATH, ".//div[4][@class = 'Home_Header__iJKdX']"]
 
@@ -37,3 +37,22 @@ SELECTED_METRO_STATION = [By.CLASS_NAME, 'select-search__select'] #Выбор с
 
 #Вопросы
 QUESTIONS = [By.XPATH, f"//*[@id ='accordion__heading-0']"]
+
+def index_que(data):
+    INDEX_QUE =[By.XPATH, f"//*[@id ='accordion__heading-{data["index"]}']"]
+    return INDEX_QUE
+
+def check_answer(data):
+    ANSWER = [By.XPATH, f".//div/p[contains(text(),'{data["answer"]}')]"]
+    return ANSWER
+
+#Данные пользователя
+def period(user_data):
+
+    PERIOD = [By.XPATH, f".//*[text()='{user_data["period"]}']"]
+    return PERIOD
+
+def color(user_data):
+
+    COLOR = [By.XPATH, f".//*[text()='{user_data["color"]}']"]
+    return COLOR

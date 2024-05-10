@@ -14,7 +14,6 @@ class TestOrderButton:
     @pytest.mark.parametrize('user_info', [user_data.USER_1, user_data.USER_2])
     def test_order_upper_button(self, driver, user_info):
 
-        driver = driver
         main_page = MainPage(driver, urls.MAIN_PAGE)
         order_page = OrderPage(driver, urls.MAIN_PAGE)
         #Открытие главной страницы
@@ -45,7 +44,6 @@ class TestOrderButton:
     @pytest.mark.parametrize('user_info', [user_data.USER_1, user_data.USER_2])
     def test_order_footer_button(self, driver, user_info):
 
-        driver = driver
         main_page = MainPage(driver, urls.MAIN_PAGE)
         order_page = OrderPage(driver, urls.MAIN_PAGE)
         #Открытие главной страницы

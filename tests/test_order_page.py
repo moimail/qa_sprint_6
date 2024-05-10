@@ -9,7 +9,6 @@ class TestOrderPage:
     @allure.title('Проверка перехода на главную страницу при нажатии на логотип ')
     def test_logo_to_main(self, driver):
 
-        driver = driver
         main_page = MainPage(driver, urls.MAIN_PAGE)
         # Открытие главной страницы
         main_page.open_main_page()
@@ -23,9 +22,9 @@ class TestOrderPage:
         #Проверка перехода на главную страницу
         main_page.assert_to_main_page()
 
+    @allure.title('Проверка перехода на страницу Дзена')
     def test_go_to_dzen(self, driver):
 
-        driver = driver
         main_page = MainPage(driver, urls.MAIN_PAGE)
         # Открытие главной страницы
         main_page.open_main_page()
@@ -35,7 +34,7 @@ class TestOrderPage:
         #Переход через по лого Яндекс
         main_page.click_dzen()
         #Проверка перехода на странизу дзена
-        main_page.assert_to_dzen_page()
+        main_page.check_to_dzen_page(loc.HEADER_DZEN)
 
 
 
